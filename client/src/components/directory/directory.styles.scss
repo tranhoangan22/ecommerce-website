@@ -1,0 +1,6 @@
+.directory-menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; // sets whether flex items are forced onto one line or can wrap onto multiple lines
+  justify-content: space-between;
+}

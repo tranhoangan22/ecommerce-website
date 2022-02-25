@@ -1,0 +1,23 @@
+.sign-in {
+  // width: 30vw; // 30% of the total view width
+  width: 380px;
+  display: flex;
+  flex-direction: column; // we want all the elements inside our .sign-in to sit vertically
+
+  .buttons {
+    display: flex;
+    justify-content: space-between; // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+    @media screen and (max-width: 800px) {
+      width: 80%;
+      :first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .error-message {
+    margin-bottom: 30px;
+    color: red;
+  }
+}

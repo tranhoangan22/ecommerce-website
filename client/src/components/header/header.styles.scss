@@ -1,0 +1,26 @@
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex; // when we put `justify-content` to be `space-between`, the children inside of the parent (with class `header`) will be pushed apart as far as possible
+  justify-content: space-between;
+  margin-bottom: 25px; // pushes our page 25px down from header
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+  }
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      cursor: pointer; // when hover the mouse on it, a hand with finger will appear
+    }
+  }
+}

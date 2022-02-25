@@ -1,0 +1,23 @@
+.sign-up {
+  display: flex;
+  flex-direction: column; // we want the elements to be vertically aligned
+  width: 380px;
+
+  .title {
+    margin: 10px 0;
+  }
+
+  .error-message {
+    margin-bottom: 20px;
+    color: red;
+  }
+
+  &.sign-up-success-message {
+    @media screen and (max-width: 800px) {
+      padding: 0px 10px;
+    }
+  }
+
+
+
+}

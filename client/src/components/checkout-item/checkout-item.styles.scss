@@ -1,0 +1,49 @@
+.checkout-item {
+  width: 100%;
+  display: flex;
+  min-height: 100px;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 20px;
+  align-items: center;
+
+  .image-container {
+    width: 23%;
+    padding-right: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // the width of these div is the same as the width of teh 4 headers we have in the .header-block in checkout.styles.scss
+  .name,
+  .quantity,
+  .price {
+    width: 23%;
+  }
+
+  @media screen and (max-width: 800px) {
+    .name {
+      width: 20%;
+    }
+  }
+
+  .quantity {
+    display: flex; // put all elements inside .quantity in a horizontal line by line alignment based on how much space there is
+
+    .arrow {
+      cursor: pointer; // so the user can tell that it's a clickable element
+    }
+
+    .value {
+      margin: 0 10px; // 0 on top-bottom, 10px lef-right
+    }
+  }
+
+  .remove-button {
+    padding-left: 12px;
+    cursor: pointer;
+  }
+}
