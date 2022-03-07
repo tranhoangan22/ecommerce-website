@@ -23,7 +23,13 @@ const tokenize = require("./encode"); // use to generate the JWT for creating co
 // create new user document in database and return it. if the document exists, just return it
 const createUserDocument = async (req, res) => {
   const userRef = db.doc(`users/${req.body.params.uid}`);
-  const snapShot = await userRef.get();
+
+  let snapShot;
+  try {
+    snapShot = await userRef.get();
+  } catch (err) {
+    console.log(err);
+  }
 
   if (!snapShot.exists) {
     const { displayName, email, signInWithGoogle } = req.body.params;
