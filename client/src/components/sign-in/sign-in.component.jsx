@@ -11,12 +11,10 @@ import { createStructuredSelector } from "reselect";
 import {
   googleSignInStart,
   emailSignInStart,
-} from "../../redux/user/user.actions.js"; // import the action creator that triggers the desired action
+} from "../../redux/user/user.actions.js";
 
 import "./sign-in.styles.scss";
 
-// For our signin, we use class component (or functional component with hooks), this enables us to store what the user types in at the component level...
-// class SignIn extends React.Component {
 const SignIn = ({
   emailSignInStart,
   googleSignInStart,
@@ -32,12 +30,12 @@ const SignIn = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    emailSignInStart(email, password, cartItems); // dispatch the action of type: EMAIL_SIGN_IN_START, with the payload: {email, password} - the email and password that the user enters
+    emailSignInStart(email, password, cartItems);
   };
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setCredentials({ ...userCredentials, [name]: value }); // if event comes from the email input, name (or event.target.name) will be email and the email variable in the state object should be updated to be the corresponding event.target.value
+    setCredentials({ ...userCredentials, [name]: value });
   };
 
   return (
@@ -69,7 +67,7 @@ const SignIn = ({
         <div className="buttons">
           <CustomButton type="submit">Sign in</CustomButton>
           <CustomButton
-            type="button" // type `button` will not triggers submitting of the form
+            type="button"
             onClick={() => googleSignInStart(cartItems)}
             isGoogleSignIn
           >

@@ -51,23 +51,17 @@ const SignUp = ({
     setCredentials({ ...userCredentials, [name]: value });
   };
 
-  /**
-   * if sign-up is successful, prompt the user to check their email.
-   * Note, `signUpSuccessful` will be changed anyway when going away and comming back to this page, so it's necessary to
-   * have the if (signUpSuccessful)
-   **/
   useEffect(() => {
     if (signUpSuccessful) {
       setShowEmailConfirmReminder(true);
     }
-    // returned function will be called on component unmount, ie, when leaving the page
     return () => {
       if (signUpSuccessful) {
         setShowEmailConfirmReminder(false);
-        disableSignUpSuccessful(); // dispatch the action to set signUpSuccessful to false when the user leaves the page, refreshes browser..
+        disableSignUpSuccessful();
       }
     };
-  }, [signUpSuccessful, disableSignUpSuccessful]); // include signUpSuccessful here to suppress a warning
+  }, [signUpSuccessful, disableSignUpSuccessful]);
 
   return !showEmailConfirmReminder ? (
     <div className="sign-up">
@@ -131,7 +125,7 @@ const mapStateToProp = createStructuredSelector({
 });
 
 const mapDispatchToProp = (dispatch) => ({
-  signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)), // userCredentials === {username, password, displayName}
+  signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
   disableSignUpSuccessful: () => dispatch(disableSignUpSuccessful()),
 });
 

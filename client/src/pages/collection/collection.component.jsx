@@ -8,8 +8,6 @@ import { selectCollection } from "../../redux/shop/shop.selectors.js";
 
 import CollectionItem from "../../components/collection-item/collection-item.component.jsx";
 
-// import "./collection.styles.scss";
-
 import {
   CollectionPageContainer,
   CollectionTitle,
@@ -19,7 +17,7 @@ import {
 const CollectionPage = () => {
   const { collectionId } = useParams();
 
-  const collection = useSelector(selectCollection(collectionId)); // note `selectCollection(collectionId)` returns a selector that "gives" back the collection based on `collectionId`, from `state.shop.collections`
+  const collection = useSelector(selectCollection(collectionId));
 
   const { title, items } = collection;
   return (

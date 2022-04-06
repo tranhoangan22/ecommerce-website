@@ -1,8 +1,6 @@
 import { CartActionTypes } from "./cart.types";
 import { addItemToCart, removeItemFromCart } from "./cart.utils";
 
-// initial state for `state.hidden` and `state.cartItems`. Here, all the states related to cart are declared.
-// NOTE that `state` here in `cart.reducer.js` is a slice of the entire Redux state -> `state.cart` in `root-reducer.js`
 const INITIAL_STATE = {
   hidden: true,
   cartItems: [],

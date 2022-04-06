@@ -57,6 +57,4 @@ const mapStateToProps = createStructuredSelector({
 
 export default connect(mapStateToProps)(CheckoutPage);
 
-// Note about the test card: https://stripe.com/docs/testing#cards
-
 // NOTE: `CheckoutPage` is instantiated when the user clicks on "GO TO CHECKOUT" button in `CartDropDown`

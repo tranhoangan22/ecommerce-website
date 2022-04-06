@@ -41,7 +41,6 @@ const ContactPage = () => {
       console.log("failed to update user contact info. ", err);
     }
 
-    // Send confirmation email to user when they're done signing up with email and password
     try {
       await axios.post("api/sendcontactemailtouser/", {
         params: { name: userName, email },
@@ -53,7 +52,7 @@ const ContactPage = () => {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target; // name can be `name`, `user, `mesage`
+    const { name, value } = event.target;
     setContactInfo({ ...contactInfo, [name]: value });
   };
 

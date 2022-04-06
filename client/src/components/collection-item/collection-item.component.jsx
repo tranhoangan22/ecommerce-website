@@ -1,10 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-// import { CustomButton } from "../custom-button/custom-button.component.jsx";
-import { addItem } from "../../redux/cart/cart.actions.js"; // import in the action creator that takes in an item and creates the action that adds this item to the respective redux state slice
-
-// import "./collection-item.styles.scss";
+import { addItem } from "../../redux/cart/cart.actions.js";
 
 import {
   CollectionItemContainer,
@@ -32,7 +29,6 @@ const CollectionItem = ({ item, addItem }) => {
   );
 };
 
-// the `CollectionItem` component, after going through `connect` with `mapDispatchToProps`, will receive a prop. This prop is a function which dispatches the action that adds the items to the cart slice of the redux state
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),
 });

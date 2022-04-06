@@ -1,14 +1,4 @@
-// BACKEND REQUESTS HERE
-
 import axios from "axios";
-
-/**
- * Note: all requests made here at the client side to the backend are possible because:
- * The React app is configured to proxy backend requests to the local Node server (see client/package.json).
- * We have to enable cors in server/server.js.
- **/
-
-// create the user document in Firestore if it doesn't already exist. if the document exists, just return it
 export const createUserProfileDocument = (user, signInWithGoogle) => {
   if (!user) return;
 
@@ -22,7 +12,6 @@ export const createUserProfileDocument = (user, signInWithGoogle) => {
   });
 };
 
-// Verifies if the user has confirmed their email and returns the userSnapshot from Firestore
 export const verifyUser = (uid) => {
   if (!uid) return;
 
@@ -31,7 +20,6 @@ export const verifyUser = (uid) => {
   });
 };
 
-// Send confirmation email to user when they're done signing up with email and password
 export const sendSignupConfirmationEmailToUser = (
   name,
   email,
