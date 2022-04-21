@@ -1,5 +1,4 @@
 # Ecommerce website
-https://antran-clothing.herokuapp.com/ 
 
 ## Tech stack
 react, redux, redux-saga, styled-components, firebase, nodejs, epxressjs, heroku
